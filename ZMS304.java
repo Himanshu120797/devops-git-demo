@@ -109,7 +109,7 @@ public void PBINZ() {
         ZQBAS.setITNO().move(DSP.W4ITNO); 
         //A 
         ZQBAS.SETLL_SCAN("60", ZQBAS.getKey("60")); 
-    } //A BSLTRM00420 250529 
+    }   
     // - Question type 5 
      
     if(IN65){ 
@@ -176,9 +176,9 @@ public void PBCHK()
     }
     // Questiontype
     if (!PBCHK_ValidateInquiry()) {
-        if (DSP.WWQTTP != 1 && DSP.WWQTTP != 2 && DSP.WWQTTP != 3 && //A BSLTRM00420 250529
-            DSP.WWQTTP != 4 && //A BSLTRM00420 250529
-            DSP.WWQTTP != 5 //A BSLTRM00420 250603
+        if (DSP.WWQTTP != 1 && DSP.WWQTTP != 2 && DSP.WWQTTP != 3 &&  
+            DSP.WWQTTP != 4 &&  
+            DSP.WWQTTP != 5  
         ) {
             picSetMethod('D');
             IN60 = true;
@@ -259,23 +259,23 @@ switch(0)
         ZQBAS.setITNO().move(DSP.W2ITNO); 
         break; 
     } 
-    if (IN63) { //A BSLTRM00420 250529 
-        ZQBAS.setCHID().move(DSP.W3USID); //A BSLTRM00420 250529 
-        ZQBAS.setCUNO().move(DSP.W3CUNO); //A BSLTRM00420 250529 
-        ZQBAS.setPRRF().move(DSP.W3PRRF); //A BSLTRM00420 250529 
-        ZQBAS.setITNO().move(DSP.W3ITNO); //A BSLTRM00420 250529 
-        break; //A BSLTRM00420 250529 
-    } //A BSLTRM00420 250529 
-    if (IN64) { //A BSLTRM00420 250529 
-        ZQBAS.setRGDT(DSP.W4RGDT); //A BSLTRM00420 250529 
-        ZQBAS.setRGTM(DSP.W4RGTM); //A BSLTRM00420 250529 
-        ZQBAS.setCHID().move(DSP.W4USID); //A BSLTRM00420 250529 
-        ZQBAS.setCUNO().move(DSP.W4CUNO); //A BSLTRM00420 250529 
-        ZQBAS.setPRRF().move(DSP.W4PRRF); //A BSLTRM00420 250529 
-        ZQBAS.setITNO().move(DSP.W4ITNO); //A BSLTRM00420 250529 
-        break; //A BSLTRM00420 250529 
-    } //A BSLTRM00420 250529 
-    if (IN65) { //A BSLTRM00420 250619 
+    if (IN63) {   
+        ZQBAS.setCHID().move(DSP.W3USID);   
+        ZQBAS.setCUNO().move(DSP.W3CUNO);   
+        ZQBAS.setPRRF().move(DSP.W3PRRF);   
+        ZQBAS.setITNO().move(DSP.W3ITNO);   
+        break;   
+    }   
+    if (IN64) {   
+        ZQBAS.setRGDT(DSP.W4RGDT);   
+        ZQBAS.setRGTM(DSP.W4RGTM);   
+        ZQBAS.setCHID().move(DSP.W4USID);   
+        ZQBAS.setCUNO().move(DSP.W4CUNO);   
+        ZQBAS.setPRRF().move(DSP.W4PRRF);   
+        ZQBAS.setITNO().move(DSP.W4ITNO);   
+        break;   
+    }   
+    if (IN65) {   
         ZQBAS.setRGDT(DSP.W5RGDT); 
         ZQBAS.set00YN().move(DSP.W500YN); 
         ZQBAS.setCHID().move(DSP.W5USID); 
@@ -296,7 +296,7 @@ switch(0)
              ZQBAS.set00YN().move(DSP.WS00YN); 
              ZQBAS.setCHID().move(DSP.WSUSID); 
              ZQBAS.setRGDT(DSP.WSRGDT); 
-             ZQBAS.setRGTM(DSP.WSRGTM); //A BSLTRM00420 250529
+             ZQBAS.setRGTM(DSP.WSRGTM);  
              ZQBAS.setBJNO().move(DSP.WSBJNO); 
              ZQBAS.setRESN().move(DSP.WSRESN); 
             }
@@ -326,27 +326,27 @@ switch(0)
                           break PBCHKX; 
                       } 
                 } 
-                if (IN63) { //A BSLTRM00420 250529 
-                    if (DSP.W3USID.NE(XXUSID) || //A BSLTRM00420 250529 
-                        DSP.W3CUNO.NE(XXCUNO) || //A BSLTRM00420 250529 
-                        DSP.W3PRRF.NE(XXPRRF) || //A BSLTRM00420 250529 
-                        DSP.W3ITNO.NE(XXITNO)) { //A BSLTRM00420 250529 
-                        picSetMethod('I'); //A BSLTRM00420 250529 
-                        break PBCHKX; //A BSLTRM00420 250529 
-                    } //A BSLTRM00420 250529 
-                } //A BSLTRM00420 250529 
-                if (IN64) { //A BSLTRM00420 250529 
-                    if (DSP.W4RGDT.NE(X4RGDT) || //A BSLTRM00420 250529 
-                        DSP.W4RGTM.NE(X4RGTM) || //A BSLTRM00420 250529 
-                        DSP.W4USID.NE(XXUSID) || //A BSLTRM00420 250529 
-                        DSP.W4CUNO.NE(XXCUNO) || //A BSLTRM00420 250529 
-                        DSP.W4PRRF.NE(XXPRRF) || //A BSLTRM00420 250529 
-                        DSP.W4ITNO.NE(XXITNO)) { //A BSLTRM00420 250529 
-                        picSetMethod('I'); //A BSLTRM00420 250529 
-                        break PBCHKX; //A BSLTRM00420 250529 
-                    } //A BSLTRM00420 250529 
-                } //A BSLTRM00420 250529
-                if (IN65) { //A BSLTRM00420 250619 
+                if (IN63) {   
+                    if (DSP.W3USID.NE(XXUSID) ||   
+                        DSP.W3CUNO.NE(XXCUNO) ||   
+                        DSP.W3PRRF.NE(XXPRRF) ||   
+                        DSP.W3ITNO.NE(XXITNO)) {   
+                        picSetMethod('I');   
+                        break PBCHKX;   
+                    }   
+                }   
+                if (IN64) {   
+                    if (DSP.W4RGDT.NE(X4RGDT) ||   
+                        DSP.W4RGTM.NE(X4RGTM) ||   
+                        DSP.W4USID.NE(XXUSID) ||   
+                        DSP.W4CUNO.NE(XXCUNO) ||   
+                        DSP.W4PRRF.NE(XXPRRF) ||   
+                        DSP.W4ITNO.NE(XXITNO)) {   
+                        picSetMethod('I');   
+                        break PBCHKX;   
+                    }   
+                }  
+                if (IN65) {   
                     if (DSP.W5RGDT.NE(X5RGDT) || 
                         DSP.W500YN.NE(XX00YN) || 
                         DSP.W5USID.NE(XXUSID) || 
@@ -378,7 +378,7 @@ switch(0)
                     if (
                         this.XXOPT2.NE(" 1")&& 
                         this.XXOPT2.NE(" 2") && 
-                        this.XXOPT2.NE(" 3") && //A BSLTRM00420 250529 
+                        this.XXOPT2.NE(" 3") &&   
                         this.XXOPT2.NE(" 4") && 
                         this.XXOPT2.NE(" 5") && 
                         this.XXOPT2.NE("11")) {//Option 11 is to re-process the data with 'NO' flag 
