@@ -1,5 +1,3 @@
-
-
 // Stub classes to allow compilation
 class Interactive {}
 class DSP {
